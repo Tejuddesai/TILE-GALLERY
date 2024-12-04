@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CustomerPanel.master.cs" Inherits="Customer_CustomerPanel" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="../engine1/style.css" />
+	<script type="text/javascript" src="../engine1/jquery.js"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            height: 144px;
+        }
+        .style11
+        {
+            height: 30px;
+            font-family: Georgia;
+            font-size: xx-large;
+            font-weight: 700;
+        }
+        .style12
+        {
+            width: 112px;
+        }
+        .style13
+        {
+            width: 662px;
+        }
+        .style15
+        {
+            width: 107px;
+            text-align: center;
+        }
+        .style16
+        {
+            width: 93px;
+            text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table class="style1" cellpadding="0" cellspacing="0" 
+        style="border-left: thin solid #CC3300; border-right: thin solid #CC3300; border-top: thick solid #CC3300; border-bottom: thin solid #CC3300; font-family: Arial, Helvetica, sans-serif;">
+        <tr>
+            <td class="style12">
+               <asp:Image ID="Image1" runat="server" Height="63px" 
+                    ImageUrl="~/Image/logo1.png" Width="88px" />
+                </td>
+            <td class="style11" valign="middle">
+                TILE SHOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+            <td class="style13" style="padding: 5px">
+                <table align="center" cellpadding="3" class="" width="400" 
+                    style="border: thin solid #C0C0C0">
+                    <tr>
+                        <td class="">
+                            <asp:TextBox ID="TextBox1" runat="server" BorderStyle="None" Height="35px" 
+                                Width="350px" placeholder="Enter Product Category..." 
+                             ></asp:TextBox>
+                        </td>
+                        <td class="">
+                            <asp:ImageButton ID="ImageButton1" runat="server" Height="40px" 
+                                ImageUrl="~/Image/search.png" Width="40px" />
+                        </td>
+                    </tr>
+                </table>
+
+                </td>
+            <td class="style15" valign="middle">
+                <asp:Image ID="Image2" runat="server" Height="40px" ImageUrl="~/Image/user.png" 
+                    Width="40px" />
+                </td>
+            <td class="style16" valign="middle">
+                            <asp:ImageButton ID="ImageButton2" runat="server" Height="40px" 
+                                ImageUrl="~/Image/carts.png" Width="40px" 
+                    PostBackUrl="~/Customer/CartPage.aspx" onclick="ImageButton2_Click" 
+                    style="margin-left: 2px; text-align: center;" />
+                </td>
+            <td class="style12" >
+                <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="Black" style="text-decoration:none; font-weight: 700;" 
+                    NavigateUrl="~/User/Home.aspx">Logout</asp:HyperLink>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: center">
+                <asp:Menu ID="Menu1" runat="server" BorderStyle="Inset" Height="38px" 
+                    Orientation="Horizontal" RenderingMode="Table" Width="100%" 
+                    BackColor="#66FF33" ForeColor="White" 
+                    style="color: #FFFFFF; background-color: #006600">
+                    <Items>
+                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Customer/HOME.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Product" Value="Product" 
+                            NavigateUrl="~/Customer/ProductCategory.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="My Order" Value="MY Order" 
+                            NavigateUrl="~/Customer/Order.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Feedback" Value="Feedback" 
+                            NavigateUrl="~/Customer/Feedback.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Cancel Order" Value="Cancel Order" 
+                            NavigateUrl="~/Customer/cancelOrder.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Customer/MyProfile.aspx" Text="My Profile" 
+                            Value="My Profile"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
